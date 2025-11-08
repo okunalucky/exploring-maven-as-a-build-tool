@@ -1,23 +1,27 @@
-# exploring-maven-as-a-build-tool
-the aim of this project is deploy a java web application using maven
+<h2>create an ec2 instance</h2>
+<li>at the level of networking, open port 8080</li>
 
-1. Connect to your Amazon EC2 instance with an SSH client
+<h2>Install Apache Maven on your EC2 instance. First, enter the following to add a repository with a Maven package</h2>
 
-2. Install Apache Maven on your EC2 instance. First, enter the following to add a repository with a Maven package
+```
+ sudo yum install wget
+```
 
-3. sudo yum install wget
+```
+sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+```
+<h2>set the version number for the packages</h2>
 
-4. sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+```
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+```
+<h2>install apache maven</h2>
 
-5. set the version number for the packages.
+```
+sudo yum install -y apache-maven
+```
 
-6. sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
-
-7. install apache maven
-
-8. sudo yum install -y apache-maven
-
-9. The Gremlin libraries require Java 8. Enter the following to install Java 8 on your EC2 instance.
+The Gremlin libraries require Java 8. Enter the following to install Java 8 on your EC2 instance.
 
 10. sudo yum install java-1.8.0-devel -y
 
