@@ -23,91 +23,32 @@ sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 sudo yum install -y apache-maven
 ```
 <h2>install Java 8 on your EC2 instance</h2>
-
-```
-sudo yum install java-1.8.0-devel -y
-
-```
-```
-sudo yum install java-11 -y
-
-```
+<code>sudo yum install java-1.8.0-devel -y</code>
+<code>sudo yum install java-11 -y</code>
 <h2>set Java 8 as the default runtime on your EC2 instance</h2>
-```
-sudo /usr/sbin/alternatives --config java
-
-```
+<code.sudo /usr/sbin/alternatives --config java</code>
 <li> When prompted, enter the number corresponding (4) to java 1.8 for Java 11</li>
 <h2>set Java 8 as the default compiler on your EC2 instance</h2>
-
-```
-sudo /usr/sbin/alternatives --config javac
-
-```
+<code>sudo /usr/sbin/alternatives --config javac</code>
 <li>When prompted, enter the number 2 for Javac maven compiler</li>
 <h2>review the config</h2>
-
-```
-mvn -v
-
-```
+<code>mvn -v</code>
 <h2>install tree</h2>
-
-```
-sudo yum install tree -y
-
-```
+<code>sudo yum install tree -y </code>
 <h2>install git</h2>
-```
-sudo yum install git -y
-
-```
+<code>sudo yum install git -y</code>
 <h2>Create the .m2 directory in the home directory of your current user</h2>
-```
-mkdir ~/.m2
-
-```
+<code>mkdir ~/.m2</code>
 <h2>this repository contains the java application</h2>
-```
-git clone https://github.com/asaphdanchi/practice-mvn-nexus-sonar-101.git
-
-```
-
-```
-ls
-
-```
-```
-cd into the directory
-
-```
-```
-cd into java web to make sure you're in the pom.xml path
-
-```
+<code>git clone https://github.com/asaphdanchi/practice-mvn-nexus-sonar-101.git</code>
+<code>ls</code>
+<code>cd into the directory</code>
+<code>cd into java web to make sure you're in the pom.xml path</code>
 <h2>run the following maven commands</h2>
-```
-mvn validate
-
-```
-```
-mvn compile
-
-```
-```
-mvn test
-
-```
-```
-mvn package
-
-```
-```
-mvn verify
-
-```
+<code>mvn validate</code>
+<code>mvn compile</code>
+<code>mvn test</code>
+<code>mvn package</code>
+<code>mvn verify</code>
 <h2>deploying the maven application</h2>
-```
-java -jar appname.jar
-
-```
+<code>java -jar appname.jar</code>
