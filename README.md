@@ -66,5 +66,7 @@ mvn test
 mvn package
 mvn verify
 ```
-<h2>deploying the maven application</h2>
-<code>java -jar appname.jar</code>
+- Deploy the maven application by running the code:
+```sh
+java -jar appname.jar
+```
